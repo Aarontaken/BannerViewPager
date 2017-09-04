@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager = (BannerViewPager) findViewById(R.id.banner);
         BannerPagerAdapter adapter = new BannerPagerAdapter();
         viewPager.setAdapter(adapter);
+        viewPager.setOffscreenPageLimit(15);//设置个缓存，不要每次都新建view。否则手动滑动时，左右imageview的展示会有问题
         viewPager.setCurrentItem(Integer.MAX_VALUE / 2, false);
         viewPager.startRoll();
     }
